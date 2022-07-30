@@ -5,13 +5,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SOMCH.Models.ScaffoledModels
 {
-    public partial class registration2Context : DbContext
+    //why partial class
+    public partial class Registration2Context : DbContext
     {
-        public registration2Context()
+        public Registration2Context()
         {
         }
 
-        public registration2Context(DbContextOptions<registration2Context> options)
+        public Registration2Context(DbContextOptions<Registration2Context> options)
             : base(options)
         {
         }
@@ -34,6 +35,8 @@ namespace SOMCH.Models.ScaffoledModels
         public virtual DbSet<RegRoom> RegRooms { get; set; } = null!;
         public virtual DbSet<RegUserInfo> RegUserInfos { get; set; } = null!;
 
+        #region Configuring DB Connection
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -42,6 +45,9 @@ namespace SOMCH.Models.ScaffoledModels
             }
         }
 
+        #endregion
+
+        #region Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Databasechangelog>(entity =>
@@ -1658,6 +1664,7 @@ namespace SOMCH.Models.ScaffoledModels
             OnModelCreatingPartial(modelBuilder);
         }
 
+        #endregion
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

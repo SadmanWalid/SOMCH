@@ -1,0 +1,257 @@
+﻿@{
+    Layout = "_Layout04";
+}
+
+
+
+   
+    
+
+    <!-- ============================search=========================================== -->
+    <div class="container" id="container-body">
+    <div class="row search">
+      <div class="col-md-3">
+        <span>
+          <label id="label-date" for="date-form">Date</label><br />
+          <input
+            id="date-from"
+            type="text"
+            placeholder="From"
+            size="5"
+            onfocus="(this.type='date')"
+            onblur="if(this.value==''){this.type='text'}"
+          />
+        </span>
+        <span>
+          <input
+            id="date-to"
+            type="text"
+            placeholder="To"
+            size="5"
+            onfocus="(this.type='date')"
+            onblur="if(this.value==''){this.type='text'}"
+          />
+        </span>
+      </div>
+
+      <div class="col-md-1">
+        <span>
+          <label for="patient-id">Patient ID</label>
+          <br />
+
+          <input id="patient-id" size="6" type="text" placeholder="Type Here" />
+        </span>
+      </div>
+
+      <div class="col-md-1">
+        <label for="mobile-no">Mobile No</label>
+        <span>
+          <br />
+
+          <input id="mobile-no" size="6" type="text" placeholder="Type Here" />
+        </span>
+      </div>
+
+      <div class="col-md-1">
+        <label for="govt-id">Govt.ID</label>
+        <span>
+          <br />
+
+          <input id="govt-id" size="7" type="text" placeholder="Type Here" />
+        </span>
+      </div>
+
+      <div class="col-md-1" >
+        <label for="blood-group">Blood Group</label>
+        <span>
+          <br />
+          <select id="blood_group" name=""  >
+            <option value="" disabled selected>Select</option>
+            <option value="B+">B+</option>
+            <option value="A+">A+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="col-md-1">
+        <label for="reg_from">Reg. Source</label>
+        <span>
+          <br />
+
+          <select id="reg_from">
+            <option value="" disabled selected>Select</option>
+            <option>Medical Student</option>
+            <option>Staff</option>
+            <option>Patient</option>
+            <option>Other</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="col-md-1">
+        <button id="search" type="button" class="btn btn-primary btn-sm" style=" margin-top: 20px; margin-left:50px;">
+          Search
+        </button>
+      </div>
+
+      <div class="col-md-1">
+        <button id="reset" type="button" class="btn btn-outline-primary btn-sm" style="margin-top: 20px; margin-left:60px;">
+          Reset 
+        </button>
+      </div>
+    </div>
+    
+
+    <!-- ============================search=========================================== -->
+    <div class="row" id="worklist-body">
+      <div class="col-sm-6">
+        <span>
+          <p id="worklist-p">Date: 26-06-2021 to 28-06-2021</p>
+        </span>
+      </div>
+      <div class="col-sm-6">
+        <span>
+          <input
+            id="worklist-body-search"
+            type="text"
+            style="font-family: Arial, FontAwesome"
+            placeholder="Seach Here   &#xf002;"
+          />
+        </span>
+      </div>
+
+      <!-- =====================================table========================================== -->
+      <div class="row" style="margin-bottom: 90px;">
+        <table id="table" >
+          <tr class="table-item" id="table_heading">
+            <th>SL</th>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>BO</th>
+            <th>Mobile no.</th>
+            <th>Reg. Source</th>
+            <th>Reg Type</th>
+            <th>Govt. ID</th>
+            <th>Uploaded Doc.</th>
+            <th>Action</th>
+          </tr>
+
+          <tr id="data1">
+            <td>01</td>
+            <td>R01201119000001</td>
+            <td>Al Mamun</td>
+            <td>Male</td>
+            <td>30Y 5M 2D</td>
+            <td>AB+</td>
+            <td>01234567890</td>
+            <td>Reg. Booth</td>
+            <td>Medical Student</td>
+            <td>NID-26541234</td>
+            <td>
+              <button class="uploaded-btn">Student ID</button>
+            </td>
+            <td>
+              <button class="btn-icon"><i class="fa fa-edit"></i></button>
+              <button class="btn-icon"><i class="fa fa-trash"></i></button>
+              <button class="btn-icon"><i class="fa fa-save"></i></button>
+            </td>
+          </tr>
+
+          <tr id="data2">
+            <td>02</td>
+            <td>R01201119000001</td>
+            <td>Al Mamun</td>
+            <td>Male</td>
+            <td>30Y 5M 2D</td>
+            <td>AB+</td>
+            <td>01234567890</td>
+            <td>Reg. Booth</td>
+            <td>Medical Student</td>
+            <td>NID-26541234</td>
+            <td>
+              <button class="uploaded-btn">Student ID</button>
+            </td>
+            <td>
+              <button class="btn-icon"><i class="fa fa-edit"></i></button>
+              <button class="btn-icon"><i class="fa fa-trash"></i></button>
+              <button class="btn-icon"><i class="fa fa-save"></i></button>
+            </td>
+          </tr>
+
+          <tr id="data3">
+            <td>03</td>
+            <td>R01201119000001</td>
+            <td>Al Mamun</td>
+            <td>Male</td>
+            <td>30Y 5M 2D</td>
+            <td>AB+</td>
+            <td>01234567890</td>
+            <td>Reg. Booth</td>
+            <td>Medical Student</td>
+            <td>NID-26541234</td>
+            <td>
+              <button class="uploaded-btn">Student ID</button>
+            </td>
+            <td>
+              <button class="btn-icon"><i class="fa fa-edit"></i></button>
+              <button class="btn-icon"><i class="fa fa-trash"></i></button>
+              <button class="btn-icon"><i class="fa fa-save"></i></button>
+            </td>
+          </tr>
+
+          <tr id="data4">
+            <td>04</td>
+            <td>R01201119000001</td>
+            <td>Al Mamun</td>
+            <td>Male</td>
+            <td>30Y 5M 2D</td>
+            <td>AB+</td>
+            <td>01234567890</td>
+            <td>Reg. Booth</td>
+            <td>Medical Student</td>
+            <td>NID-26541234</td>
+            <td>
+              <button class="uploaded-btn">Student ID</button>
+            </td>
+            <td>
+              <button class="btn-icon"><i class="fa fa-edit"></i></button>
+              <button class="btn-icon"><i class="fa fa-trash"></i></button>
+              <button class="btn-icon"><i class="fa fa-save"></i></button>
+            </td>
+          </tr>
+
+          <tr id="data5">
+            <td>05</td>
+            <td>R01201119000001</td>
+            <td>Al Mamun</td>
+            <td>Male</td>
+            <td>30Y 5M 2D</td>
+            <td>AB+</td>
+            <td>01234567890</td>
+            <td>Reg. Booth</td>
+            <td>Medical Student</td>
+            <td>NID-26541234</td>
+            <td>
+              <button class="uploaded-btn">Student ID</button>
+            </td>
+            <td>
+              <button class="btn-icon"><i class="fa fa-edit"></i></button>
+              <button class="btn-icon"><i class="fa fa-trash"></i></button>
+              <button class="btn-icon"><i class="fa fa-save"></i></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- =====================================table========================================== -->
+    </div>
+    </div>
+
+

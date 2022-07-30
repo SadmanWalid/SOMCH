@@ -18,6 +18,18 @@ namespace SOMCH.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Index()
+        //{
+
+
+
+        //}
+
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

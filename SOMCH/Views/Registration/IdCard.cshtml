@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/id-card.css">
+
+
+    <title>Identity Card</title>
+</head>
+<body>
+  <!-- class=" container  flex-column " -->
+  <main >
+    <!-- front -->
+    <section id="front">
+      <div class="conatiner flex-column">
+        <div class="title-box p-1">
+          <img src="/images/somc-logo.png" alt="" class="img-fluid">
+          <div class="h3">সিলেট এমএজি ওসমানী মেডিকেল কলেজ হাসপাতাল</div>
+        </div>
+    
+        <div class="information-box">
+          <div class="row p-3">
+            <div class="col-md-3 col-sm-4 d-flex flex-column align-items-center">
+              <img src="/images/id-img.png" alt="" class="img-fluid rounded id-image">
+              <img src="/images/bar-code-id.png" alt="" class="img-fluid id-barcode mt-2">
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <p class="h3 font-weight-bold">Abdullah Al Mamun</p>
+              <p class="h6">রোগীর আইডিঃ R012109000001</p>
+              <p class="h6">রক্তের গ্রুপঃ AB+</p>
+              <p class="h6">লিঙ্গঃ Male</p>
+              <p class="h6">জন্ম তারিখঃ 10/10/1990</p>
+    
+            </div>
+            <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-end align-items-center">
+              <p class="text-muted my-1"> <small>রোগীর আইডি কার্ড</small></p>
+              <img src="/images/qr-code.png" alt="" class="img-fluid id-barcode">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+
+    <!-- back -->
+  
+    <section id="back" >
+      <div class="container flex-column">
+        <div class="title-box-back p-1 ">
+          <div class="h3 text-center">এই কার্ডটি পাওয়া গেলে অনুগ্রহ করে SOMCH অ্যাডমিন অফিসে জমা দিন</div>
+        </div>
+        <div class="information-box-back">
+          <div class="row">
+            <div class="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
+             <div class="pt-5" >
+              
+             <p ><b>ঠিকানাঃ<br>
+                মেডিকেল কলেজ রোড, সিলেট <br>
+                যোগাযোগঃ0821-713667
+              </b>
+              </p>
+             </div>
+            </div>
+            
+            
+          </div>
+
+        </div>
+        <div class="back-footer">
+          <div class="row p-1">
+          <div class="col-md-6">
+              <p class="id-back-footer-p text-muted">
+                ইস্যুর তারিখঃ <br>
+                12 Nov 2021,10:10AM
+              </p>
+          </div>
+
+          <div class="col-md-6 justify-content-end">
+            <div id="poweredBy">
+              <p class="poweredByText" >Powered By:</p>
+              <span >
+                <img class="footer-img-eGen" src="/images/footer-logo-eGen.png" alt="eGenaration Ltd" />
+              </span>
+              <span >
+                <img class="footer-img-mars" src="/images/footer-logo-mars.png" alt="mars" />
+              </span>
+            </div>
+            
+          </div>
+
+        </div>
+        </div>
+      </div>
+
+     
+    </section>
+    
+
+   
+
+  </main>
+
+</body>
+</html>

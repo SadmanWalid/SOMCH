@@ -1,0 +1,537 @@
+﻿@*@model RegistrationEpicOne.Models.RegPatientRegInfo*@
+
+@{
+    Layout = "_layout04";
+}
+
+
+
+
+  <main class="registration-main">
+	<form action="">
+		<div class="container">
+			<div class="page-title">
+				<span>Registration (Walk in Patient) > Registration</span>
+			</div>
+			<div class="row px-2">
+				<!-- Left Side -->
+				<div class="col-6 information-card border border-dark">
+					<!-- form -->
+					<div class="information-title">
+						<span>Basic Information</span>
+					</div>
+					<div class="full-name">
+						<label for="full-name" class="form-label info-label required">Full Name (in English)</label>
+						<input type="text" class="form-control" id="full-name" placeholder="Type Here" required />
+					</div>
+
+					<!-- Gender -->
+					<div class="gender-field mt-3">
+						<span class="info-label required" style="display: block;">Gender</span>
+						<div class="form-check form-check-inline mt-2">
+							<input class="form-check-input" type="radio" name="gender" id="gender1" value="male" required />
+							<label class="form-check-label" for="gender1">
+								Male
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" id="gender2" value="female" />
+							<label class="form-check-label" for="gender2">
+								Female
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" id="gender3" value="other" />
+							<label class="form-check-label" for="gender3">
+								other
+							</label>
+						</div>
+					</div>
+
+					<!-- DOB -->
+					<div class="row">
+						<div class="col-6">
+							<div class="row">
+								<div class="col my-3">
+									<label class="form-label info-label required" for="dob">Date of Birth</label>
+									<input type="date" class="form-control" id="dob" required />
+								</div>
+								<div class="col my-3">
+									<label class="form-label info-label" for="age">Age</label>
+									<input type="number" class="form-control" id="age" placeholder="Year" />
+								</div>
+							</div>
+						</div>
+						<!-- split -->
+						<div class="col-6 my-3">
+							<label class="form-label info-label" for="mobile-number">Mobile Number</label>
+							<input type="text" class="form-control" id="mobile-number" placeholder="01XXXXXXXXX" />
+						</div>
+					</div>
+
+					<!-- Blood Group -->
+					<div class="row">
+						<div class="col-6">
+							<div class="info-label mb-2"><span>Blood Group</span></div>
+							<select class="form-select" aria-label="Blood Group">
+								<option selected>Select</option>
+								<option value="1">A+</option>
+								<option value="2">A-</option>
+								<option value="3">B+</option>
+								<option value="4">B-</option>
+								<option value="5">AB+</option>
+								<option value="6">AB-</option>
+								<option value="5">O+</option>
+								<option value="6">O-</option>
+							</select>
+						</div>
+						<!-- Marital Status -->
+						<div class="col-6">
+							<div class="info-label mb-2"><span>Marital Status</span></div>
+							<select class="form-select" aria-label="Marital Status">
+								<option selected>Select</option>
+								<option value="1">Married</option>
+								<option value="2">Unmarried</option>
+								<option value="3">Divorced</option>
+								<option value="4">Widowed</option>
+							</select>
+						</div>
+
+						<!-- Govt Id -->
+						<div class="mt-3">
+							<span class="info-label" style="display: block;">Govt. ID</span>
+							<div class="form-check form-check-inline mt-2">
+								<input class="form-check-input" type="radio" name="id-type" id="id-type1" value="1" required />
+								<label class="form-check-label" for="id-type1">
+									National ID
+								</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="id-type" id="id-type2" value="2" />
+								<label class="form-check-label" for="id-type2">
+									Birth Certificate
+								</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="id-type" id="id-type3" value="3" />
+								<label class="form-check-label" for="id-type3">
+									Passport
+								</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="id-type" id="id-type4" value="4" />
+								<label class="form-check-label" for="id-type4">
+									Don't have ID
+								</label>
+							</div>
+						</div>
+
+						<!-- NID & Reg Type -->
+						<div class="row mt-3">
+							@*<div class="col-6 my-3">
+								<label class="form-label info-label" for="nid-number">Insert NID No. Here
+								</label>
+								<input type="text" class="form-control" id="nid-number" placeholder="NID Number" />
+								</div>*@
+							<!-- Marital Status -->
+							<div class="col-6 mt-3">
+								<div class="info-label mb-2">
+									<span>Registration Type</span>
+								</div>
+								<select class="form-select" aria-label="Registration Type">
+									<option selected>Select</option>
+									<option value="1">Medical Student</option>
+									<option value="1">Medical Stuff</option>
+									<option value="1">Other</option>
+								</select>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+
+				<!-- Right side -->
+
+
+				<div class="col information-card">
+					<!-- Capture/Upload Photo -->
+					<div class="mb-3">
+						<label for="formFile" class="form-label required">Capture/Upload Photo</label>
+						<input class="form-control" type="file" id="formFile">
+						Choose an image
+						<ul class="mt-2 px-3">
+							<li>Upload only JPG, PNG format image</li>
+							<li>Max image size 2 MB</li>
+						</ul>
+					</div>
+
+					<!-- Accordion Starting -->
+
+					<div class="accordion" id="accordionExample">
+
+						<!--C/O Information-->
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+										aria-expanded="true" aria-controls="collapseOne" style="background-color: lightblue; color: black;">
+									C/O Information
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+								 data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<div class="row care-of-info mt-3">
+										<div class="col-12">
+											<label for="care-of" class="form-label info-label">C/O Information</label>
+											<input type="text" class="form-control" id="care-of" placeholder="Type Here" />
+										</div>
+										<div class="col-12 mt-3">
+											<div class="row">
+												<div class="col-6">
+													<div class="info-label mb-2">
+														<span>Relationship</span>
+													</div>
+													<select class="form-select" aria-label="Registration Type">
+														<option selected>Select</option>
+														<option value="1">Father</option>
+														<option value="1">Mother</option>
+														<option value="1">Other</option>
+													</select>
+												</div>
+												<div class="col-6">
+													<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
+													<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						@*<div class="information-title">
+							<span>Capture/Upload Photo</span>
+							</div>
+							<div class="upload-photo-container">
+							<img class="preview-photo" src="~/default-dp.png" alt=""  srcset="">
+							<div class="photo-options">
+							<span class="btn btn-secondary icon-text"><i class="bi bi-camera"></i> Camera</span>
+							<span class="btn btn-secondary icon-text"><i class="bi bi-upload"></i> Upload</span>
+							<ul>
+							<li>Upload only jpeg, jpeg, png format only</li>
+							<li>Max file size 2 MB</li>
+							</ul>
+							</div>
+
+							</div>*@
+
+
+						<!-- Other Information -->
+
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: lightblue; color: black;">
+									Other Information
+								</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+								 data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+
+									<!-- Occupation & religion -->
+									<div class="row">
+										<div class="col-6">
+											<div class="info-label mb-2"><span>Occupation</span></div>
+											<select class="form-select" aria-label="Occupation">
+												<option selected>Select</option>
+												<option value="1">Service Holder</option>
+												<option value="2">Govt. Employee</option>
+												<option value="3">Other</option>
+											</select>
+										</div>
+										<div class="col-6">
+											<div class="info-label mb-2"><span>Religion</span></div>
+											<select class="form-select" aria-label="Religion">
+												<option selected>Select</option>
+												<option value="1">Islam</option>
+												<option value="2">Hindism</option>
+												<option value="3">Other</option>
+											</select>
+										</div>
+									</div>
+
+									<!-- Nationality and Email -->
+									<div class="row">
+										<div class="col-6">
+											<div class="info-label mb-2"><span>Nationality</span></div>
+											<select class="form-select" aria-label="Nationality">
+												<option selected>Select</option>
+												<option value="1">Bangladeshi</option>
+												<option value="2">Indian</option>
+												<option value="3">Other</option>
+											</select>
+										</div>
+										<div class="col-6">
+											<label for="email" class="form-label info-label">Email</label>
+											<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" required />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Contact Info -->
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: lightblue; color: black;">
+									Contact Information
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+								 data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+
+									<!-- Division and District -->
+
+									<div class="row">
+										<div class="col-6">
+											<div class="info-label mb-2"><span>Division</span></div>
+											<select class="form-select" aria-label="Occupation">
+												<option selected>Select</option>
+												<option value="1">Dhaka</option>
+												<option value="2">Chittagong</option>
+												<option value="3">Sylhet</option>
+											</select>
+										</div>
+										<div class="col-6">
+											<div class="info-label mb-2"><span>District</span></div>
+											<select class="form-select" aria-label="District">
+												<option selected>Select</option>
+												<option value="1">Sylhet Sadar</option>
+												<option value="2">This</option>
+												<option value="3">That</option>
+											</select>
+										</div>
+									</div>
+
+									<!-- Thana and addr -->
+
+									<div class="row">
+										<div class="col-6">
+											<div class="info-label mb-2"><span>Thana</span></div>
+											<select class="form-select" aria-label="Thana">
+												<option selected>Select</option>
+												<option value="1">So</option>
+												<option value="2">Many</option>
+												<option value="3">Options</option>
+											</select>
+										</div>
+										<div class="col-6">
+											<label for="email" class="form-label info-label">Email</label>
+											<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Emergency Contact -->
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="background-color: lightblue; color: black;">
+									Emergency Contact
+								</button>
+							</h2>
+							<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+								 data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<div class="row">
+										<div class="col-12">
+											<label for="er-name" class="form-label info-label">Name</label>
+											<input type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
+										</div>
+
+										<!-- Relationship and Mobile Number -->
+										<div class="col-6 mt-3">
+											<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
+											<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
+										</div>
+
+										<div class="col-6 mt-3">
+											<div class="info-label mb-2"><span>Relationship</span></div>
+											<select class="form-select" aria-label="Relationship">
+												<option selected>Select</option>
+												<option value="1">Father</option>
+												<option value="1">Mother</option>
+												<option value="1">Other</option>
+											</select>
+										</div>
+
+										<div class="col-12 mt-3">
+											<label for="er-addr" class="form-label info-label">Address</label>
+											<input type="text" class="form-control" id="er-addr" placeholder="Address" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+					@*<div class="information-title">
+						<span>Other Information</span>
+						</div>
+					<!-- Occupation & religion -->
+						<div class="row">
+						<div class="col-6">
+						<div class="info-label mb-2"><span>Occupation</span></div>
+						<select class="form-select" aria-label="Occupation">
+						<option selected>Select</option>
+						<option value="1">Service Holder</option>
+						<option value="2">Govt. Employee</option>
+						<option value="3">Other</option>
+						</select>
+						</div>
+						<div class="col-6">
+						<div class="info-label mb-2"><span>Religion</span></div>
+						<select class="form-select" aria-label="Religion">
+						<option selected>Select</option>
+						<option value="1">Islam</option>
+						<option value="2">Hindism</option>
+						<option value="3">Other</option>
+						</select>
+						</div>
+						</div>
+
+						<!-- Nationality and Email -->
+						<div class="row">
+						<div class="col-6">
+						<div class="info-label mb-2"><span>Nationality</span></div>
+						<select class="form-select" aria-label="Nationality">
+						<option selected>Select</option>
+						<option value="1">Bangladeshi</option>
+						<option value="2">Indian</option>
+						<option value="3">Other</option>
+						</select>
+						</div>
+						<div class="col-6">
+						<label for="email" class="form-label info-label">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" required />
+						</div>
+						</div>
+
+					<!-- Contract Info -->
+						<div class="information-title mt-3">
+						<span>Contact Information</span>
+						</div>
+
+					<!-- Division and District -->
+						<div class="row">
+						<div class="col-6">
+						<div class="info-label mb-2"><span>Division</span></div>
+						<select class="form-select" aria-label="Occupation">
+						<option selected>Select</option>
+						<option value="1">Dhaka</option>
+						<option value="2">Chittagong</option>
+						<option value="3">Sylhet</option>
+						</select>
+						</div>
+						<div class="col-6">
+						<div class="info-label mb-2"><span>District</span></div>
+						<select class="form-select" aria-label="District">
+						<option selected>Select</option>
+						<option value="1">Sylhet Sadar</option>
+						<option value="2">This</option>
+						<option value="3">That</option>
+						</select>
+						</div>
+						</div>
+
+						<!-- Thana and addr -->
+						<div class="row">
+						<div class="col-6">
+						<div class="info-label mb-2"><span>Thana</span></div>
+						<select class="form-select" aria-label="Thana">
+						<option selected>Select</option>
+						<option value="1">So</option>
+						<option value="2">Many</option>
+						<option value="3">Options</option>
+						</select>
+						</div>
+						<div class="col-6">
+						<label for="email" class="form-label info-label">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" />
+						</div>
+						</div>
+
+					<!-- Emergency Contact -->
+					<!-- Contract Info -->
+					<div class="information-title mt-3">
+						<span>Emergency Contact</span>
+						</div>
+
+					<div class="row">
+						<div class="col-12">
+						<label for="er-name" class="form-label info-label">Name</label>
+						<input type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
+						</div>
+
+						<!-- Relationship and Mobile Number -->
+						<div class="col-6 mt-3">
+						<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
+						<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
+						</div>
+
+						<div class="col-6 mt-3">
+						<div class="info-label mb-2"><span>Relationship</span></div>
+						<select class="form-select" aria-label="Relationship">
+						<option selected>Select</option>
+						<option value="1">Father</option>
+						<option value="1">Mother</option>
+						<option value="1">Other</option>
+						</select>
+						</div>
+
+						<div class="col-12 mt-3">
+						<label for="er-addr" class="form-label info-label">Address</label>
+						<input type="text" class="form-control" id="er-addr" placeholder="Address" />
+						</div>
+						</div>*@
+
+
+				</div>
+
+
+			
+
+
+
+				   <div class="row">
+            <div class="col-12 d-flex justify-content-center my-3">
+              <a href="#" class="btn btn-secondary">Reset</a>
+              <button   type="submit"  class="btn btn-primary">Save</button>
+              <a href="@Url.Action("IdCard","Registration")" class="btn btn-success">View Patient ID Card</a>
+            </div>
+          </div>
+			</div>
+		</div>
+	</form>
+</main>
+
+
+
+

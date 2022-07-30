@@ -1,0 +1,150 @@
+
+.dashboard-body {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgb(236, 234, 234);
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+
+.title {
+ 
+    margin-top:10px;
+ 
+  background-color: slategray;
+/*  padding: 10px;*/
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.dashboard {
+    background-color: white;
+    width: 100%;
+    height: 50%;
+
+    /*   margin: 20px;
+    padding: 20px; */
+    display: flex;
+
+}
+
+.dashboard .patient_reg {
+  /* background-color: cyan;
+    width: 18%;
+    height: 100%;*/
+ 
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+    .dashboard .patient_reg span {
+       
+        border-radius: 5px;
+        display: inline-block;
+        margin-right: 3px;
+    }
+
+    .dashboard .reg_work_list {
+       
+        border-radius: 5px;
+        display: inline-block;
+        margin-right: 3px;
+    }
+
+.dashboard .reg_work_list span {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .req_work_list {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .req_work_list span {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .split_account {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .split_account span {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .merge_account {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.dashboard .merge_account span {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+
+
+/*.footer {
+  margin-top: 230px;
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  display: flex;
+}
+
+.footer #copy-rights {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: sticky;
+  display: inline-block;
+  left: 40px;
+}
+.footer #powered {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  position: sticky;
+  left: 940px;
+}
+
+.footer #egen {
+  display: inline-block;
+  position: sticky;
+
+  display: flex;
+  left: 1020px;
+
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.footer #mars{
+    display: inline-block;
+    position: sticky;
+  
+    display: flex;
+    left: 1105px;
+  
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+*/
