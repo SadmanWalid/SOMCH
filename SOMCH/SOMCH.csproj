@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\ScaffoledModels\**" />
+    <Content Remove="Models\ScaffoledModels\**" />
+    <EmbeddedResource Remove="Models\ScaffoledModels\**" />
+    <None Remove="Models\ScaffoledModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
       <PrivateAssets>all</PrivateAssets>

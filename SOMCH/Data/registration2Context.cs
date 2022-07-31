@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using SOMCH.Models;
+using FileInfo = SOMCH.Models.FileInfo;
 
-namespace SOMCH.Models.ScaffoledModels
+namespace SOMCH.Data
 {
-    //why partial class
-    public partial class Registration2Context : DbContext
+    public partial class registration2Context : DbContext
     {
-        public Registration2Context()
+        public registration2Context()
         {
         }
 
-        public Registration2Context(DbContextOptions<Registration2Context> options)
+        public registration2Context(DbContextOptions<registration2Context> options)
             : base(options)
         {
         }
@@ -35,19 +36,14 @@ namespace SOMCH.Models.ScaffoledModels
         public virtual DbSet<RegRoom> RegRooms { get; set; } = null!;
         public virtual DbSet<RegUserInfo> RegUserInfos { get; set; } = null!;
 
-        #region Configuring DB Connection
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Name=ConnectionStrings:RegistrationDatabase");
+                optionsBuilder.UseNpgsql("Name=ConnectionStrings:RegistrationDataBase");
             }
         }
 
-        #endregion
-
-        #region Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Databasechangelog>(entity =>
@@ -1664,7 +1660,6 @@ namespace SOMCH.Models.ScaffoledModels
             OnModelCreatingPartial(modelBuilder);
         }
 
-        #endregion
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

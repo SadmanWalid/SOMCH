@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SOMCH.Models.ScaffoledModels
+namespace SOMCH.Models
 {
     public partial class RegEmployee
     {
