@@ -7,13 +7,13 @@ using FileInfo = SOMCH.Models.FileInfo;
 
 namespace SOMCH.Data
 {
-    public partial class registration2Context : DbContext
+    public partial class Registration2Context : DbContext
     {
-        public registration2Context()
+        public Registration2Context()
         {
         }
 
-        public registration2Context(DbContextOptions<registration2Context> options)
+        public Registration2Context(DbContextOptions<Registration2Context> options)
             : base(options)
         {
         }

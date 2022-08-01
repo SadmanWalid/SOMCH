@@ -1,7 +1,17 @@
+using SOMCH.Data;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//DI
+//builder.Services.AddDbContextPool<Registration2Context>(options => 
+//options.UseNpgsql(builder.Configuration.GetConnectionString("RegistrationDataBase")));
+
+
 
 var app = builder.Build();
 
