@@ -1,13 +1,93 @@
-﻿@*@model RegistrationEpicOne.Models.RegPatientRegInfo*@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 
 @{
-    Layout = "_layout04";
+	ViewData["Title"] = "Registration Page";
 }
 
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="~/css/Registration.css" />
+</head>
 
+<nav class="navbar navbar-light bg-light">
+	<div class="nav-left">
+		<a class="navbar-brand btn btn-light p-2 m-0" style="width: 60px; height: 50px; display: inline-block;" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+		   aria-controls="offcanvasExample">
+			<i class="bi bi-list"></i>
+		</a>
 
+		<div class="offcanvas offcanvas-start w-20" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+			<div class="offcanvas-header">
+				<p class="offcanvas-title" id="offcanvasExampleLabel" style="color: blue; font-size: 18px;"><strong>SOMCH</strong></p>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<img class="img-fluid rounded mx-auto d-block" src="~/images/somc-logo.png" alt="..." width="150px" height="150px">
+				<div class="dropdown mt-3">
+					<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+						<i class="bi bi-house-door"></i> Dashboard
+					</button>
+					<button class="btn btn-light dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown" style="height: 34px;">
+						<i class="bi bi-border-all"></i> Registration
+					</button>
+					<ul class="dropdown-menu w-100">
+						<li><a class="dropdown-item" href="#">Patient Registration</a></li>
+						<li><a class="dropdown-item" href="#">Registered Patient List</a></li>
+						<li><a class="dropdown-item" href="#">Privileged Request Patient List</a></li>
+					</ul>
+				</div>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-box"></i> OPD
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-bank"></i> Setup
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-border-all"></i> OPD Pharmacy
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-box-fill"></i> Laboratory
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-boxes"></i> Pathology
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-box2"></i> BloodBank
+				</button>
+				<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+					<i class="bi bi-pass"></i> Radiology
+				</button>
+			</div>
+		</div>
 
-  <main class="registration-main">
+		<a class="navbar-brand" href="#">
+			<span class="navbar-title">SYLHET M A G OSMANI Medical College Hospital</span>
+		</a>
+	</div>
+
+	<!-- Nav Right -->
+	<div class="nav-right">
+		<div class="mujib-100">
+			<img src="~/images/mujib-100.png" alt="" />
+		</div>
+		<div class="date mx-5">
+			12 July 2022, 12:44 PM
+		</div>
+		<div class="notification">
+			<i class="bi bi-bell fa-lg"></i>
+		</div>
+		<div class="user-icon">
+			<img src="~/images/rokib_dp-modified.png" class="rounded mx-2" width="30px" alt="" />
+		</div>
+		<div class="user-name">
+			Rokibul Islam
+		</div>
+	</div>
+</nav>
+
+<main class="registration-main">
 	<form action="">
 		<div class="container">
 			<div class="page-title">
@@ -395,7 +475,7 @@
 					@*<div class="information-title">
 						<span>Other Information</span>
 						</div>
-					<!-- Occupation & religion -->
+						<!-- Occupation & religion -->
 						<div class="row">
 						<div class="col-6">
 						<div class="info-label mb-2"><span>Occupation</span></div>
@@ -434,12 +514,12 @@
 						</div>
 						</div>
 
-					<!-- Contract Info -->
+						<!-- Contract Info -->
 						<div class="information-title mt-3">
 						<span>Contact Information</span>
 						</div>
 
-					<!-- Division and District -->
+						<!-- Division and District -->
 						<div class="row">
 						<div class="col-6">
 						<div class="info-label mb-2"><span>Division</span></div>
@@ -478,13 +558,13 @@
 						</div>
 						</div>
 
-					<!-- Emergency Contact -->
-					<!-- Contract Info -->
-					<div class="information-title mt-3">
+						<!-- Emergency Contact -->
+						<!-- Contract Info -->
+						<div class="information-title mt-3">
 						<span>Emergency Contact</span>
 						</div>
 
-					<div class="row">
+						<div class="row">
 						<div class="col-12">
 						<label for="er-name" class="form-label info-label">Name</label>
 						<input type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
@@ -515,23 +595,26 @@
 
 				</div>
 
-
-			
-
-
-
-				   <div class="row">
-            <div class="col-12 d-flex justify-content-center my-3">
-              <a href="#" class="btn btn-secondary">Reset</a>
-              <button   type="submit"  class="btn btn-primary">Save</button>
-              <a href="@Url.Action("IdCard","Registration")" class="btn btn-success">View Patient ID Card</a>
-            </div>
-          </div>
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center my-3">
+						<a href="#" class="btn newbtn btn-secondary">Reset</a>
+						<button type="button" class="btn newbtn btn-primary">Save</button>
+						<a href="#" class="btn newbtn btn-success">View Patient ID Card</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</form>
 </main>
-
-
-
-
+<footer class="border-top footer container text-muted">
+	<div class="row d-flex justify-content-between align-items-center py-2">
+		<div class="col-6">
+			&copy; 2022 eGeneration
+		</div>
+		<div class="col-6 d-flex align-items-center justify-content-end">
+			<span class="mx-3">Powered By: </span>
+			<span class="mt"><img src="~/images/eGeneration-logo.png" height="30px" alt="" /></span>
+			<span class="mx-3"><img src="~/images/mars-logo.png" height="30" alt="" /></span>
+		</div>
+	</div>
+</footer>

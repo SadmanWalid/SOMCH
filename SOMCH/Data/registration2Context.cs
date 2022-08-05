@@ -40,7 +40,7 @@ namespace SOMCH.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Name=ConnectionStrings:RegistrationDataBase");
+                optionsBuilder.UseNpgsql("Host=116.68.206.156;Database=registration2;Username=reguser2;Password=reguser2");
             }
         }
 

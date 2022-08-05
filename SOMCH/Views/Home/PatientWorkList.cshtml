@@ -1,0 +1,394 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	ViewData["Title"] = "Patient WorkList Page";
+}
+
+@{
+	Layout = "PatientWorkListLayout";
+}
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SYLHET M A G OSMANI Medical College Hospital</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+	<link rel="stylesheet"
+		  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="~/css/PatientWorkList.css" />
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+	@*<div class="navbar">
+		<span id="medName">
+		<p>SYLHET MAG OSMANI Medical College Hospital</p>
+		</span>
+		<span id="mujib">
+		<img src="~/header-logo-mujib.png" alt="Mujib Borso" />
+		</span>
+		<span id="time">
+		<p>12 June 2022, Sunday : 12 : 42 : 53 AM</p>
+		</span>
+		<span id="notification">
+		<img src="~/header-notification-icon.png" alt="Notification" />
+		</span>
+		<span id="profile-photo">
+		<img id="img" src="~/header-profile-photo.jpg" alt="Profile Picture" />
+		</span>
+		<span id="name">
+		<p>MD. Sadman Walid</p>
+		</span>
+		</div>*@
+
+	<div class="container-fluid">
+		<div class="row bg-white align-items-center justify-content-center" style="height: 50px;">
+
+			<div class="col-1 text-center">
+				<button class="btn bg-white p-2 m-0" style="width: 60px; height: 50px; display: inline-block;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2"
+						aria-controls="offcanvasExample2">
+					<i class="bi bi-list" style="font-size: 2rem;"></i>
+				</button>
+
+				<div class="offcanvas offcanvas-start w-20" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel">
+					<div class="offcanvas-header">
+						<h4 class="offcanvas-title" id="offcanvasExampleLabel" style="color: blue;"><strong>SOMCH</strong></h4>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<img class="img-fluid rounded mx-auto d-block" src="~/images/somc-logo.png" alt="..." width="150px" height="150px">
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-house-door"></i> Dashboard
+						</button>
+						<button class="btn btn-light dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown" style="height: 34px;">
+							<i class="bi bi-border-all"></i> Registration
+						</button>
+						<ul class="dropdown-menu w-100">
+							<li><a class="dropdown-item" href="#">Patient Registration</a></li>
+							<li><a class="dropdown-item" href="#">Registered Patient List</a></li>
+							<li><a class="dropdown-item" href="#">Privileged Request Patient List</a></li>
+						</ul>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-box"></i> OPD
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-bank"></i> Setup
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-border-all"></i> OPD Pharmacy
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-box-fill"></i> Laboratory
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-boxes"></i> Pathology
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-box2"></i> BloodBank
+						</button>
+						<button class="btn btn-light w-100 mt-2" type="button" style="height: 34px;">
+							<i class="bi bi-pass"></i> Radiology
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3 text-start text-primary">
+				<p><strong>SYLHET MAG OSMANI Medical College Hospital</strong></p>
+			</div>
+
+			<div class="col-1 text-center">
+				<img src="~/images/header-logo-mujib.png" alt="Mujib Borso" width="50px" height="40px" />
+			</div>
+
+			<div class="col-3 text-center py-2">
+				<p style="background-color: lightblue;">12 June 2022, Sunday : 12 : 42 : 53 AM</p>
+			</div>
+
+			<div class="col-1 text-end">
+				<img src="~/images/header-notification-icon.png" alt="Notification" width="30px" height="30px" style="margin-left: 200px;" />
+			</div>
+
+			<div class="col-1 text-end">
+				<img id="img" src="~/images/header-profile-photo.jpg" alt="Profile Picture" width="35px" height="40px" style="margin-left: 150px;" />
+			</div>
+
+			<div class="col-2 text-end ps-0">
+				<p>MD. Sadman Walid</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="title">
+		<span style="color: white">
+			<p>
+				Registration(Walk-In Patients) > Registered Patient Work List
+			</p>
+		</span>
+	</div>
+	<!-- ============================search=========================================== -->
+	<div class="search">
+		<div class="col-md-3">
+			<span>
+				<label id="label-date" for="date-form">Date</label><br />
+				<input id="date-from"
+					   type="text"
+					   placeholder="From"
+					   size="10"
+					   onfocus="(this.type='date')"
+					   onblur="if(this.value==''){this.type='text'}" />
+			</span>
+			<span>
+				<input id="date-to"
+					   type="text"
+					   placeholder="To"
+					   size="10"
+					   onfocus="(this.type='date')"
+					   onblur="if(this.value==''){this.type='text'}" />
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<span>
+				<label for="patient-id">Patient ID</label>
+				<br />
+
+				<input id="patient-id" size="8" type="text" placeholder="Type Here" />
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<label for="mobile-no">Mobile No</label>
+			<span>
+				<br />
+
+				<input id="mobile-no" size="8" type="text" placeholder="Type Here" />
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<label for="govt-id">Govt.ID</label>
+			<span>
+				<br />
+
+				<input id="govt-id" size="8" type="text" placeholder="Type Here" />
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<label for="blood-group">Blood Group</label>
+			<span>
+				<br />
+				<select id="blood_group" name="">
+					<option value="" disabled selected>Select</option>
+					<option value="B+">B+</option>
+					<option value="A+">A+</option>
+					<option value="AB+">AB+</option>
+					<option value="O+">O+</option>
+					<option value="A-">A-</option>
+					<option value="B-">B-</option>
+					<option value="AB-">AB-</option>
+					<option value="O-">O-</option>
+				</select>
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<label for="reg_from">Reg. Source</label>
+			<span>
+				<br />
+
+				<select id="reg_from">
+					<option value="" disabled selected>Select</option>
+					<option>Medical Student</option>
+					<option>Staff</option>
+					<option>Patient</option>
+					<option>Other</option>
+				</select>
+			</span>
+		</div>
+
+		<div class="col-md-1">
+			<button id="search" type="button" class="btn btn-primary btn-sm" style="margin-left: 145px;">
+				Search
+			</button>
+		</div>
+
+		<div class="col-md-1">
+			<button id="reset" type="button" class="btn btn-outline-primary" style="margin-left: 145px;">
+				Reset
+			</button>
+		</div>
+	</div>
+	<!-- ============================search=========================================== -->
+	<div class="col-md-11" id="worklist-body">
+		<div class="col-md-6">
+			<span>
+				<p id="worklist-p">Date:26-06-2021 to 28-06-2021</p>
+			</span>
+		</div>
+		<div class="col-md-6">
+			<span>
+				<input id="worklist-body-search"
+					   type="text"
+					   style="font-family: Arial, FontAwesome"
+					   placeholder="Seach Here        &#xf002;" />
+			</span>
+		</div>
+
+		<!-- =====================================table========================================== -->
+		<div>
+			<table id="table" style="margin-left: 50px;">
+				<tr class="table-item" id="table_heading">
+					<th>SL</th>
+					<th>Patient ID</th>
+					<th>Patient Name</th>
+					<th>Gender</th>
+					<th>Age</th>
+					<th>BO</th>
+					<th>Mobile no.</th>
+					<th>Reg. Source</th>
+					<th>Reg Type</th>
+					<th>Govt. ID</th>
+					<th>Uploaded Doc.</th>
+					<th>Action</th>
+				</tr>
+
+				<tr id="data1">
+					<td>01</td>
+					<td>R01201119000001</td>
+					<td>Al Mamun</td>
+					<td>Male</td>
+					<td>30Y 5M 2D</td>
+					<td>AB+</td>
+					<td>01234567890</td>
+					<td>Reg. Booth</td>
+					<td>Medical Student</td>
+					<td>NID-26541234</td>
+					<td>
+						<button class="uploaded-btn">Student ID</button>
+					</td>
+					<td>
+						<button class="btn-icon"><i class="fa fa-edit"></i></button>
+						<button class="btn-icon"><i class="fa fa-trash"></i></button>
+						<button class="btn-icon"><i class="fa fa-save"></i></button>
+					</td>
+				</tr>
+
+				<tr id="data2">
+					<td>02</td>
+					<td>R01201119000001</td>
+					<td>Al Mamun</td>
+					<td>Male</td>
+					<td>30Y 5M 2D</td>
+					<td>AB+</td>
+					<td>01234567890</td>
+					<td>Reg. Booth</td>
+					<td>Medical Student</td>
+					<td>NID-26541234</td>
+					<td>
+						<button class="uploaded-btn">Student ID</button>
+					</td>
+					<td>
+						<button class="btn-icon"><i class="fa fa-edit"></i></button>
+						<button class="btn-icon"><i class="fa fa-trash"></i></button>
+						<button class="btn-icon"><i class="fa fa-save"></i></button>
+					</td>
+				</tr>
+
+				<tr id="data3">
+					<td>03</td>
+					<td>R01201119000001</td>
+					<td>Al Mamun</td>
+					<td>Male</td>
+					<td>30Y 5M 2D</td>
+					<td>AB+</td>
+					<td>01234567890</td>
+					<td>Reg. Booth</td>
+					<td>Medical Student</td>
+					<td>NID-26541234</td>
+					<td>
+						<button class="uploaded-btn">Student ID</button>
+					</td>
+					<td>
+						<button class="btn-icon"><i class="fa fa-edit"></i></button>
+						<button class="btn-icon"><i class="fa fa-trash"></i></button>
+						<button class="btn-icon"><i class="fa fa-save"></i></button>
+					</td>
+				</tr>
+
+				<tr id="data4">
+					<td>04</td>
+					<td>R01201119000001</td>
+					<td>Al Mamun</td>
+					<td>Male</td>
+					<td>30Y 5M 2D</td>
+					<td>AB+</td>
+					<td>01234567890</td>
+					<td>Reg. Booth</td>
+					<td>Medical Student</td>
+					<td>NID-26541234</td>
+					<td>
+						<button class="uploaded-btn">Student ID</button>
+					</td>
+					<td>
+						<button class="btn-icon"><i class="fa fa-edit"></i></button>
+						<button class="btn-icon"><i class="fa fa-trash"></i></button>
+						<button class="btn-icon"><i class="fa fa-save"></i></button>
+					</td>
+				</tr>
+
+				<tr id="data5">
+					<td>05</td>
+					<td>R01201119000001</td>
+					<td>Al Mamun</td>
+					<td>Male</td>
+					<td>30Y 5M 2D</td>
+					<td>AB+</td>
+					<td>01234567890</td>
+					<td>Reg. Booth</td>
+					<td>Medical Student</td>
+					<td>NID-26541234</td>
+					<td>
+						<button class="uploaded-btn">Student ID</button>
+					</td>
+					<td>
+						<button class="btn-icon"><i class="fa fa-edit"></i></button>
+						<button class="btn-icon"><i class="fa fa-trash"></i></button>
+						<button class="btn-icon"><i class="fa fa-save"></i></button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- =====================================table========================================== -->
+	</div>
+</body>
+
+<!-- ============================footer============================ -->
+<footer class="footer">
+	<span id="copy-rights">
+		<p>© 2022 All copyrights eGeneration Ltd.</p>
+	</span>
+
+	<span id="powered" style="left: 1070px;">
+		<p>Powered By:</p>
+	</span>
+	<span id="egen" style="left: 1150px;">
+		<img src="~/images/footer-logo-eGen.png" alt="eGenaration Ltd" />
+	</span>
+	<span id="mars" style="left: 1230px;">
+		<img src="~/images/footer-logo-mars.png" alt="mars" />
+	</span>
+</footer>

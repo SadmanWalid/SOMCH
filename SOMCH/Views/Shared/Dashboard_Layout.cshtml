@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SOMCH_Project_V2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SOMCH_Project_V2.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    @*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SOMCH_Project_V2</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="navbar navbar-light bg-light">
+	<div class="nav-left">
+		<a class="navbar-brand btn btn-light p-2 m-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+		   aria-controls="offcanvasExample">
+			<i class="bi bi-list"></i>
+		</a>
+
+		<div class="offcanvas offcanvas-start w-20" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: blue;">SOMCH</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<img class="img-fluid rounded mx-auto d-block" src="~/somc-logo.png" alt="..." width="150px" height="150px">
+				<div class="dropdown mt-3">
+					<button class="btn btn-light w-100 mb-3" type="button">
+						<i class="bi bi-house-door"></i> Dashboard
+					</button>
+					<button class="btn btn-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+						<i class="bi bi-border-all"></i> Registration
+					</button>
+					<ul class="dropdown-menu w-100">
+						<li><a class="dropdown-item" href="#">Patient Registration</a></li>
+						<li><a class="dropdown-item" href="#">Registered Patient List</a></li>
+						<li><a class="dropdown-item" href="#">Privileged Request Patient List</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<a class="navbar-brand" href="#">
+			<span class="navbar-title">SYLHET M A G OSMANI Medical College Hospital</span>
+		</a>
+	</div>
+
+	<!-- Nav Right -->
+	<div class="nav-right">
+		<div class="mujib-100">
+			<img src="~/mujib-100.png" alt="" />
+		</div>
+		<div class="date mx-5">
+			12 July 2022, 12:44 PM
+		</div>
+		<div class="notification">
+			<i class="bi bi-bell fa-lg"></i>
+		</div>
+		<div class="user-icon">
+			<img src="~/rokib_dp-modified.png" class="rounded mx-2" width="30px" alt="" />
+		</div>
+		<div class="user-name">
+			Rokibul Islam
+		</div>
+	</div>
+</nav>*@
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - SOMCH_Project_V2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,120 +1,197 @@
-﻿
-@{
-    //Layout = null;
-    Layout = "_Layout04";
-}
-
-@*<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SYLHET M A G OSMANI Medical College Hospital</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/dashboard.css" /> 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-    
-
-============================dashboard-body=====================================
-
-style=" background-color: white;
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid rgb(236, 234, 234);
-    width: 100%;
-    height: 100%;"
-============================dashboard-body=====================================
-
-============================dashboard=====================================
-
-    background-color: white;
-    width: 100%;
-    height: 50%;
-     display: flex;
-    /*   margin: 20px;
-    padding: 20px; */
-   
-    to-do
-    remove inline style 
-
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-   
- <div class="dashboard-body" style=" background-color: white;
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid rgb(236, 234, 234);
-    width: 100%;
-    height: 100%;" >
-     
-   <div class="title">
-    <span style="color: white"> Registration(Walk-In Patients) </span>
-   </div>
+@{
+	ViewData["Title"] = "Dashboard Page";
+}
 
-   <div class="dashboard" style="   background-color: white;
-    width: 100%;
-    height: 50%;
-margin-top:15px;
-     display: flex;">
-    <div class="patient_reg" style=" margin-right: 2px;">
-      <span>
-        <a  href="@Url.Action("Registration","Registration")" ><img src="/images/pr.PNG" alt="Patient Registration" />
-        </a>
-      </span>
-    </div>
-    <div class="reg_work_list" style=" margin-right: 2px;">
-      <span>
-        <a href="@Url.Action("RegisteredPatientList","Registration")"><img src="/images/rpwl.PNG" alt="Registered Patient Work List" /></a>
-      </span>
-    </div>
-    <div class="req_work_list" style=" margin-right: 2px;">
-      <span>
-        <a href="#"><img src="/images/prwl.PNG" alt="Privileged Request Work List" /></a>
-      </span>
-    </div>
-    <div class="split_account" style=" margin-right: 2px;">
-      <span>
-        <a href="#"><img src="/images/spa.PNG" alt="Split Patient Account" /></a>
-      </span>
-    </div>
-    <div class="merge_account" style=" margin-right: 2px;">
-      <span>
-        <a href="#"><img src="/images/mpa.PNG" alt="Merge Patient Account" /></a>
-      </span>
-    </div>
-   </div>
+@{
+	Layout = "Dashboard_Layout";
+}
 
 
- </div>
+@*<head>
+	<link rel="stylesheet" href="~/css/Dashboard.css" asp-append-version="true" />
+	</head>
 
- 
+	<div class="nothingnew">
+	<span id="med">
+	<p>
+	SYLHET MAG OSMANI Medical College Hospital
+	</p>
+	</span>
+	<span id="time">
+	<p>
+	23 Feb 2021, Tuesday : 12 : 42 : 53 PM
+	</p>
+	</span>
+	</div>
 
+	<div class="title">
+	<span>
+	Registration(Walk-In Patients)
+	</span>
+	</div>
 
-@*
-</body>
+	<div class="newboarding">
+	<div class="patient_reg">
+	<span>
+	<a asp-action="Registration">Patient Registration</a>
+	</span>
+	</div>
+	<div class="reg_work_list">
+	<span>
+	<a asp-action="PatientWorkList">Registered Patient Work List</a>
+	</span>
+	</div>
+	<div class="req_work_list">
+	<span>
+	<a href="#">Privileged Request Work List</a>
+	</span>
+	</div>
+	<div class="split_account">
+	<span>
+	<a href="#">Split Patient Account</a>
+	</span>
+	</div>
+	<div class="merge_account">
+	<span>
+	<a href="#">Merge Patient Account</a>
+	</span>
+	</div>
+	</div>*@
+
+<head>
+	<link rel="stylesheet" href="~/css/Dashboard.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<div class="container-fluid">
+	<div class="row bg-white align-items-center justify-content-center" style="height: 50px;">
+
+		<div class="col-1 text-center">
+			<button class="btn bg-white p-2 m-0" style="width: 60px; height: 50px; display: inline-block;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+					aria-controls="offcanvasExample">
+				<i class="bi bi-list" style="font-size: 2rem;"></i>
+			</button>
+
+			<div class="offcanvas offcanvas-start w-20" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+				<div class="offcanvas-header">
+					<h4 class="offcanvas-title" id="offcanvasExampleLabel" style="color: blue;"><strong>SOMCH</strong></h4>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<img class="img-fluid rounded mx-auto d-block" src="~/images/somc-logo.png" alt="..." width="150px" height="150px">
+					<button class="btn btn-light w-100 mt-2" type="button">
+							<i class="bi bi-house-door"></i> Dashboard
+					</button>
+					<button class="btn btn-light dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown">
+						<i class="bi bi-border-all"></i> Registration
+					</button>
+					<ul class="dropdown-menu w-100">
+						<li><a class="dropdown-item" href="#">Patient Registration</a></li>
+						<li><a class="dropdown-item" href="#">Registered Patient List</a></li>
+						<li><a class="dropdown-item" href="#">Privileged Request Patient List</a></li>
+					</ul>
+					<button class="btn btn-light w-100 mt-2" type="button">
+							<i class="bi bi-box"></i> OPD
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-bank"></i> Setup
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-border-all"></i> OPD Pharmacy
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-box-fill"></i> Laboratory
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-boxes"></i> Pathology
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-box2"></i> BloodBank
+					</button>
+					<button class="btn btn-light w-100 mt-2" type="button">
+						<i class="bi bi-pass"></i> Radiology
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-3 text-start text-primary">
+			<p><strong>SYLHET MAG OSMANI Medical College Hospital</strong></p>
+		</div>
+
+		<div class="col-1 text-center">
+			<img src="~/images/header-logo-mujib.png" alt="Mujib Borso" width="50px" height="40px" />
+		</div>
+
+		<div class="col-3 text-center py-2">
+			<p style="background-color: lightblue;">12 June 2022, Sunday : 12 : 42 : 53 AM</p>
+		</div>
+
+		<div class="col-1 text-end">
+			<img src="~/images/header-notification-icon.png" alt="Notification" width="30px" height="30px" style="margin-left: 200px;" />
+		</div>
+
+		<div class="col-1 text-end">
+			<img id="img" src="~/images/header-profile-photo.jpg" alt="Profile Picture" width="35px" height="40px" style="margin-left: 150px;" />
+		</div>
+
+		<div class="col-2 text-end ps-0">
+			<p>MD. Sadman Walid</p>
+		</div>
+	</div>
+</div>
+
+<div class="title">
+	<span style="color: white"> Registration(Walk-In Patients) </span>
+</div>
+
+<div class="dashboard">
+	<div class="patient_reg">
+		<span>
+			<a asp-action="Registration">
+				<img src="~/images/pr.PNG" alt="Patient Registration" />
+			</a>
+		</span>
+	</div>
+	<div class="reg_work_list">
+		<span>
+			<a asp-action="PatientWorkList"><img src="~/images/rpwl.PNG" alt="Registered Patient Work List" /></a>
+		</span>
+	</div>
+	<div class="req_work_list">
+		<span>
+			<a href="#"><img src="~/images/prwl.PNG" alt="Privileged Request Work List" /></a>
+		</span>
+	</div>
+	<div class="split_account">
+		<span>
+			<a href="#"><img src="~/images/spa.PNG" alt="Split Patient Account" /></a>
+		</span>
+	</div>
+	<div class="merge_account">
+		<span>
+			<a href="#"><img src="~/images/mpa.PNG" alt="Merge Patient Account" /></a>
+		</span>
+	</div>
+</div>
 
 <!-- ============================footer============================ -->
 <footer class="footer">
-  <span id="copy-rights">
-    <p>© 2022 All copyrights eGeneration Ltd.</p>
-  </span>
+	<span id="copy-rights">
+		<p>© 2022 All copyrights eGeneration Ltd.</p>
+	</span>
 
-  <span id="powered">
-    <p>Powered By:</p>
-  </span>
-  <span id="egen">
-    <img src="/images/footer-logo-eGen.png" alt="eGenaration Ltd" />
-  </span>
-  <span id="mars">
-    <img src="/images/footer-logo-mars.png" alt="mars" />
-  </span>
-</footer>*@
+	<span id="powered" style="left: 1135px;">
+		<p>Powered By:</p>
+	</span>
+	<span id="egen" style="left: 1215px;">
+		<img src="~/images/footer-logo-eGen.png" alt="eGenaration Ltd" />
+	</span>
+	<span id="mars" style="left: 1300px;">
+		<img src="~/images/footer-logo-mars.png" alt="mars" />
+	</span>
+</footer>

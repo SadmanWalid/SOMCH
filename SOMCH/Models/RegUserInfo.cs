@@ -5,7 +5,7 @@ namespace SOMCH.Models
 {
     public partial class RegUserInfo
     {
-        public string Id { get; set; } = null!;
+        public string? Id { get; set; } = null!;
         public string? CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public bool Enabled { get; set; }

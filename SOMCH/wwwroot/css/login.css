@@ -4,8 +4,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.body {
+body {
     margin: 0;
+    padding: 0;
 }
 
 .login-cover-image {
@@ -79,6 +80,7 @@
 
 .left-box {
     background: #deeef2;
+    width: 50%;
 }
 
 .navbar-title {
@@ -96,7 +98,6 @@
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-box-flex: 1, 1;
-    -ms-flex-positive: 1, 1;
     flex-grow: 1, 1;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -199,7 +200,7 @@
     background: #ebb9b9;
 }
 
-.newbtn {
+.btn {
     padding: 1em 2em;
     margin: 0.5em;
 }
@@ -213,7 +214,6 @@
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-box-flex: 2, 1;
-    -ms-flex-positive: 2, 1;
     flex-grow: 2, 1;
     -webkit-box-align: start;
     -ms-flex-align: start;
