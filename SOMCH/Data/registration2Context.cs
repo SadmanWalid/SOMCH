@@ -13,7 +13,7 @@ namespace SOMCH.Data
         {
         }
 
-        public Registration2Context(DbContextOptions<Registration2Context> options)
+        public Registration2Context(DbContextOptions options)
             : base(options)
         {
         }

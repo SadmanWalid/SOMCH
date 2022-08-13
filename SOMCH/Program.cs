@@ -1,19 +1,22 @@
 using SOMCH.Data;
 using Microsoft.EntityFrameworkCore;
-
+using SOMCH.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+
+
 
 //DI
-//builder.Services.AddDbContextPool<Registration2Context>(options => 
-//options.UseNpgsql(builder.Configuration.GetConnectionString("RegistrationDataBase")));
-
+builder.Services.AddDbContext<Registration2Context>(options =>
+options.UseNpgsql(builder.Configuration.GetConnectionString("RegistrationDataBase")));
+builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ILoginRepository, LoginRepository>();
 
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
