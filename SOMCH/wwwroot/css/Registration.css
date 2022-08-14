@@ -153,12 +153,7 @@
     border-radius: 0.2em;
     margin: 1em 0em;
 }
-/*========================================edit==========================================*/
 
-.registration-main {
-    border: 1px solid rgb(236, 234, 234);
-}
-/*========================================edit==========================================*/
 .registration-body {
     background: #f2efef;
 }
@@ -184,14 +179,15 @@
     padding: 0.5em 0em;
 }
 
-.information-title span {
-    font-weight: 900;
-    font-size: 1.5em;
-    color: #333;
-}
+    .information-title span {
+        font-weight: 900;
+        font-size: 1.5em;
+        color: #333;
+    }
 
 .info-label {
-    font-weight: bold;
+    font-weight:700;
+    font-size:12px;
     color: #333;
 }
 

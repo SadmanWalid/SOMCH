@@ -1,14 +1,13 @@
-﻿@*@model RegistrationEpicOne.Models.RegPatientRegInfo*@
+﻿@model SOMCH.Models.RegPatientRegInfo
 
 @{
     //Layout = "_layout04";
 }
 
 
-
-
-  <main class="registration-main">
-	<form action="">
+<main class="registration-main">
+	<form asp-action="Registration">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 		<div class="container">
 			<div class="page-title">
 				<span>Registration (Walk in Patient) > Registration</span>
@@ -20,60 +19,87 @@
 					<div class="information-title">
 						<span>Basic Information</span>
 					</div>
-					<div class="full-name">
-						<label for="full-name" class="form-label info-label required">Full Name (in English)</label>
-						<input type="text" class="form-control" id="full-name" placeholder="Type Here" required />
+					<div class="form-group full-name">
+						<span asp-for="PatientName" for="full-name" class="form-label info-label control-label required">Full Name (in English)</span>
+						<input asp-for="PatientName" type="text" class="form-control" id="full-name" placeholder="Type Here" required />
+						<span asp-validation-for="PatientName" class="text-danger" ></span>
 					</div>
 
 					<!-- Gender -->
-					<div class="gender-field mt-3">
-						<span class="info-label required" style="display: block;">Gender</span>
-						<div class="form-check form-check-inline mt-2">
-							<input class="form-check-input" type="radio" name="gender" id="gender1" value="male" required />
-							<label class="form-check-label" for="gender1">
+					<div class="row">
+
+					  <div class="col-6 gender-field mt-3">
+							 
+							 <span class="info-label required" style="display: block;">Gender</span>
+							
+						   <div class="form-check form-check-inline mt-2">
+							  <input asp-for="GenderName" class="form-check-input" type="radio" name="gender" id="gender1" value="male" required />
+							   <label class="form-check-label" for="gender1">
 								Male
-							</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="gender" id="gender2" value="female" />
+							   </label>
+						   </div>
+
+						  <div class="form-check form-check-inline">
+							<input asp-for="GenderName" Nameclass="form-check-input" type="radio" name="gender" id="gender2" value="female" />
 							<label class="form-check-label" for="gender2">
 								Female
 							</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="gender" id="gender3" value="other" />
+						  </div>
+						   
+						  <div class="form-check form-check-inline">
+							<input asp-for="GenderName" class="form-check-input" type="radio" name="gender" id="gender3" value="other" />
 							<label class="form-check-label" for="gender3">
 								other
 							</label>
-						</div>
+						   </div>
+					   </div>
+
+					   <div class="col-6 my-3">
+						   <span class="form-label info-label required" for="mobile-number">Mobile Number</span>
+							<input asp-for="PhoneNumber"  class="form-control" id="mobile-number" placeholder="01XXXXXXXXX" required />
+					   </div>
+
 					</div>
+
+			
 
 					<!-- DOB -->
 					<div class="row">
-						<div class="col-6">
-							<div class="row">
-								<div class="col my-3">
-									<label class="form-label info-label required" for="dob">Date of Birth</label>
-									<input type="date" class="form-control" id="dob" required />
-								</div>
-								<div class="col my-3">
-									<label class="form-label info-label" for="age">Age</label>
-									<input type="number" class="form-control" id="age" placeholder="Year" />
-								</div>
-							</div>
-						</div>
-						<!-- split -->
 						<div class="col-6 my-3">
-							<label class="form-label info-label" for="mobile-number">Mobile Number</label>
-							<input type="text" class="form-control" id="mobile-number" placeholder="01XXXXXXXXX" />
+							<span class="form-label info-label required" for="dob">Date of Birth</span>
+							<input asp-for="Dob" type="date" class="form-control" id="dob" required />
 						</div>
+								
+						<div class="col-6 my-3">
+							<label class="form-label info-label" for="age">Age</label>
+							
+							<div class="row">
+								<div class="form-group col">
+									<input asp-for="AgeInYear" class="form-control" id="YY" placeholder="YY" />
+						    		<span asp-validation-for="AgeInYear" class="text-danger"></span>
+								</div>
+								<div class="col">
+									<input asp-for="AgeInMonth" class="form-control" id="MM" placeholder="MM" />
+									<span asp-validation-for="AgeInMonth" class="text-danger"></span>
+								</div><div class="col">
+									<input asp-for="AgeInDay" class="form-control" id="DD" placeholder="DD" />
+									<span asp-validation-for="AgeInDay" class="text-danger"></span>
+								</div>
+
+							</div>
+						
+					   </div>
+						
 					</div>
+					
+						
+				
 
 					<!-- Blood Group -->
 					<div class="row">
 						<div class="col-6">
 							<div class="info-label mb-2"><span>Blood Group</span></div>
-							<select class="form-select" aria-label="Blood Group">
+							<select asp-for="BloodGroupId" class="form-select" aria-label="Blood Group">
 								<option selected>Select</option>
 								<option value="1">A+</option>
 								<option value="2">A-</option>
@@ -88,7 +114,7 @@
 						<!-- Marital Status -->
 						<div class="col-6">
 							<div class="info-label mb-2"><span>Marital Status</span></div>
-							<select class="form-select" aria-label="Marital Status">
+							<select asp-for="MaritalStatusId" class="form-select" aria-label="Marital Status">
 								<option selected>Select</option>
 								<option value="1">Married</option>
 								<option value="2">Unmarried</option>
@@ -98,54 +124,55 @@
 						</div>
 
 						<!-- Govt Id -->
-						<div class="mt-3">
+						
+						<div class="col-6 mt-3">
 							<span class="info-label" style="display: block;">Govt. ID</span>
-							<div class="form-check form-check-inline mt-2">
-								<input class="form-check-input" type="radio" name="id-type" id="id-type1" value="1" required />
+							
+						    	<div class="form-check form-check-inline mt-2">
+								<input asp-for="NationalId" class="form-check-input" type="radio" name="id-type" id="id-type1" value="1" required />
 								<label class="form-check-label" for="id-type1">
-									National ID
+									NID
 								</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="id-type" id="id-type2" value="2" />
+							    </div>
+							   <div class="form-check form-check-inline">
+								<input asp-for="BirthCertificateNo" class="form-check-input" type="radio" name="id-type" id="id-type2" value="2" />
 								<label class="form-check-label" for="id-type2">
-									Birth Certificate
+									Birth ID
 								</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="id-type" id="id-type3" value="3" />
+						    	</div>
+							   <div class="form-check form-check-inline">
+								<input asp-for="PassportNo" class="form-check-input" type="radio" name="id-type" id="id-type3" value="3" />
 								<label class="form-check-label" for="id-type3">
 									Passport
 								</label>
-							</div>
-							<div class="form-check form-check-inline">
+							   </div>
+							   <div class="form-check form-check-inline">
 								<input class="form-check-input" type="radio" name="id-type" id="id-type4" value="4" />
-								<label class="form-check-label" for="id-type4">
+								<label  class="form-check-label" for="id-type4">
 									Don't have ID
 								</label>
-							</div>
+							   </div>
+						
 						</div>
+					    <div class="form-group">
+							<input asp-for="BirthCertificateNo" class="form-control" />
+							 <span asp-validation-for="BirthCertificateNo" class="text-danger"></span>
+					   </div>
 
 						<!-- NID & Reg Type -->
-						<div class="row mt-3">
-							@*<div class="col-6 my-3">
-								<label class="form-label info-label" for="nid-number">Insert NID No. Here
-								</label>
-								<input type="text" class="form-control" id="nid-number" placeholder="NID Number" />
-								</div>*@
-							<!-- Marital Status -->
+
 							<div class="col-6 mt-3">
 								<div class="info-label mb-2">
 									<span>Registration Type</span>
 								</div>
-								<select class="form-select" aria-label="Registration Type">
+								<select asp-for="RegistrationTypeEnumKey" class="form-select" aria-label="Registration Type">
 									<option selected>Select</option>
 									<option value="1">Medical Student</option>
 									<option value="1">Medical Stuff</option>
 									<option value="1">Other</option>
 								</select>
 							</div>
-						</div>
+			
 
 
 					</div>
@@ -158,7 +185,7 @@
 					<!-- Capture/Upload Photo -->
 					<div class="mb-3">
 						<label for="formFile" class="form-label required">Capture/Upload Photo</label>
-						<input class="form-control" type="file" id="formFile">
+						<input asp-for="ProfileImageFileId" class="form-control" type="file" id="formFile">
 						Choose an image
 						<ul class="mt-2 px-3">
 							<li>Upload only JPG, PNG format image</li>
@@ -184,8 +211,8 @@
 								<div class="accordion-body">
 									<div class="row care-of-info mt-3">
 										<div class="col-12">
-											<label for="care-of" class="form-label info-label">C/O Information</label>
-											<input type="text" class="form-control" id="care-of" placeholder="Type Here" />
+											<label for="care-of" class="form-label info-label">Name</label>
+											<input asp-for="CoName" type="text" class="form-control" id="care-of" placeholder="Type Here" />
 										</div>
 										<div class="col-12 mt-3">
 											<div class="row">
@@ -193,16 +220,16 @@
 													<div class="info-label mb-2">
 														<span>Relationship</span>
 													</div>
-													<select class="form-select" aria-label="Registration Type">
+													<select asp-for="CoRelationship"  class="form-select" aria-label="Registration Type">
 														<option selected>Select</option>
 														<option value="1">Father</option>
-														<option value="1">Mother</option>
-														<option value="1">Other</option>
+														<option value="2">Mother</option>
+														<option value="3">Other</option>
 													</select>
 												</div>
 												<div class="col-6">
 													<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
-													<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
+													<input asp-for="CoPhoneNumber" type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
 												</div>
 											</div>
 										</div>
@@ -211,26 +238,7 @@
 							</div>
 						</div>
 
-
-
-
-						@*<div class="information-title">
-							<span>Capture/Upload Photo</span>
-							</div>
-							<div class="upload-photo-container">
-							<img class="preview-photo" src="~/default-dp.png" alt=""  srcset="">
-							<div class="photo-options">
-							<span class="btn btn-secondary icon-text"><i class="bi bi-camera"></i> Camera</span>
-							<span class="btn btn-secondary icon-text"><i class="bi bi-upload"></i> Upload</span>
-							<ul>
-							<li>Upload only jpeg, jpeg, png format only</li>
-							<li>Max file size 2 MB</li>
-							</ul>
-							</div>
-
-							</div>*@
-
-
+					
 						<!-- Other Information -->
 
 
@@ -249,7 +257,7 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="info-label mb-2"><span>Occupation</span></div>
-											<select class="form-select" aria-label="Occupation">
+											<select asp-for="Occupation" class="form-select" aria-label="Occupation">
 												<option selected>Select</option>
 												<option value="1">Service Holder</option>
 												<option value="2">Govt. Employee</option>
@@ -258,7 +266,7 @@
 										</div>
 										<div class="col-6">
 											<div class="info-label mb-2"><span>Religion</span></div>
-											<select class="form-select" aria-label="Religion">
+											<select asp-for="ReligionId" class="form-select" aria-label="Religion">
 												<option selected>Select</option>
 												<option value="1">Islam</option>
 												<option value="2">Hindism</option>
@@ -271,17 +279,17 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="info-label mb-2"><span>Nationality</span></div>
-											<select class="form-select" aria-label="Nationality">
+											<select asp-for="NationalityId"  class="form-select" aria-label="Nationality">
 												<option selected>Select</option>
 												<option value="1">Bangladeshi</option>
 												<option value="2">Indian</option>
 												<option value="3">Other</option>
 											</select>
 										</div>
-										<div class="col-6">
+										@*<div class="col-6">
 											<label for="email" class="form-label info-label">Email</label>
-											<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" required />
-										</div>
+											<input asp-for="Email"  type="email" class="form-control" id="email" placeholder="xyz@abc.com" required />
+										</div>*@
 									</div>
 								</div>
 							</div>
@@ -305,7 +313,7 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="info-label mb-2"><span>Division</span></div>
-											<select class="form-select" aria-label="Occupation">
+											<select asp-for="PresentDivisionId" class="form-select" aria-label="Division">
 												<option selected>Select</option>
 												<option value="1">Dhaka</option>
 												<option value="2">Chittagong</option>
@@ -314,7 +322,7 @@
 										</div>
 										<div class="col-6">
 											<div class="info-label mb-2"><span>District</span></div>
-											<select class="form-select" aria-label="District">
+											<select asp-for="PresentDistrictId" class="form-select" aria-label="District">
 												<option selected>Select</option>
 												<option value="1">Sylhet Sadar</option>
 												<option value="2">This</option>
@@ -328,7 +336,7 @@
 									<div class="row">
 										<div class="col-6">
 											<div class="info-label mb-2"><span>Thana</span></div>
-											<select class="form-select" aria-label="Thana">
+											<select asp-for="PresentThanaId"  class="form-select" aria-label="Thana">
 												<option selected>Select</option>
 												<option value="1">So</option>
 												<option value="2">Many</option>
@@ -337,7 +345,7 @@
 										</div>
 										<div class="col-6">
 											<label for="email" class="form-label info-label">Email</label>
-											<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" />
+											<input asp-for="Email" type="email" class="form-control" id="email" placeholder="xyz@abc.com" />
 										</div>
 									</div>
 								</div>
@@ -359,18 +367,18 @@
 									<div class="row">
 										<div class="col-12">
 											<label for="er-name" class="form-label info-label">Name</label>
-											<input type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
+											<input asp-for="EmergencyContractName" type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
 										</div>
 
 										<!-- Relationship and Mobile Number -->
 										<div class="col-6 mt-3">
 											<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
-											<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
+											<input asp-for="EmergencyContractPhone"  type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
 										</div>
 
 										<div class="col-6 mt-3">
 											<div class="info-label mb-2"><span>Relationship</span></div>
-											<select class="form-select" aria-label="Relationship">
+											<select asp-for="EmergencyContractRelationship" class="form-select" aria-label="Relationship">
 												<option selected>Select</option>
 												<option value="1">Father</option>
 												<option value="1">Mother</option>
@@ -380,7 +388,7 @@
 
 										<div class="col-12 mt-3">
 											<label for="er-addr" class="form-label info-label">Address</label>
-											<input type="text" class="form-control" id="er-addr" placeholder="Address" />
+											<input asp-for="EmergencyContractAddress"  type="text" class="form-control" id="er-addr" placeholder="Address" />
 										</div>
 									</div>
 								</div>
@@ -388,150 +396,18 @@
 						</div>
 					</div>
 
-
-
-
-
-					@*<div class="information-title">
-						<span>Other Information</span>
-						</div>
-					<!-- Occupation & religion -->
-						<div class="row">
-						<div class="col-6">
-						<div class="info-label mb-2"><span>Occupation</span></div>
-						<select class="form-select" aria-label="Occupation">
-						<option selected>Select</option>
-						<option value="1">Service Holder</option>
-						<option value="2">Govt. Employee</option>
-						<option value="3">Other</option>
-						</select>
-						</div>
-						<div class="col-6">
-						<div class="info-label mb-2"><span>Religion</span></div>
-						<select class="form-select" aria-label="Religion">
-						<option selected>Select</option>
-						<option value="1">Islam</option>
-						<option value="2">Hindism</option>
-						<option value="3">Other</option>
-						</select>
-						</div>
-						</div>
-
-						<!-- Nationality and Email -->
-						<div class="row">
-						<div class="col-6">
-						<div class="info-label mb-2"><span>Nationality</span></div>
-						<select class="form-select" aria-label="Nationality">
-						<option selected>Select</option>
-						<option value="1">Bangladeshi</option>
-						<option value="2">Indian</option>
-						<option value="3">Other</option>
-						</select>
-						</div>
-						<div class="col-6">
-						<label for="email" class="form-label info-label">Email</label>
-						<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" required />
-						</div>
-						</div>
-
-					<!-- Contract Info -->
-						<div class="information-title mt-3">
-						<span>Contact Information</span>
-						</div>
-
-					<!-- Division and District -->
-						<div class="row">
-						<div class="col-6">
-						<div class="info-label mb-2"><span>Division</span></div>
-						<select class="form-select" aria-label="Occupation">
-						<option selected>Select</option>
-						<option value="1">Dhaka</option>
-						<option value="2">Chittagong</option>
-						<option value="3">Sylhet</option>
-						</select>
-						</div>
-						<div class="col-6">
-						<div class="info-label mb-2"><span>District</span></div>
-						<select class="form-select" aria-label="District">
-						<option selected>Select</option>
-						<option value="1">Sylhet Sadar</option>
-						<option value="2">This</option>
-						<option value="3">That</option>
-						</select>
-						</div>
-						</div>
-
-						<!-- Thana and addr -->
-						<div class="row">
-						<div class="col-6">
-						<div class="info-label mb-2"><span>Thana</span></div>
-						<select class="form-select" aria-label="Thana">
-						<option selected>Select</option>
-						<option value="1">So</option>
-						<option value="2">Many</option>
-						<option value="3">Options</option>
-						</select>
-						</div>
-						<div class="col-6">
-						<label for="email" class="form-label info-label">Email</label>
-						<input type="email" class="form-control" id="email" placeholder="xyz@abc.com" />
-						</div>
-						</div>
-
-					<!-- Emergency Contact -->
-					<!-- Contract Info -->
-					<div class="information-title mt-3">
-						<span>Emergency Contact</span>
-						</div>
-
-					<div class="row">
-						<div class="col-12">
-						<label for="er-name" class="form-label info-label">Name</label>
-						<input type="er-name" class="form-control" id="er-name" placeholder="Type Here" />
-						</div>
-
-						<!-- Relationship and Mobile Number -->
-						<div class="col-6 mt-3">
-						<label class="form-label info-label" for="co-mobile-number">Mobile Number</label>
-						<input type="text" class="form-control" id="co-mobile-number" placeholder="01XXXXXXXXX" />
-						</div>
-
-						<div class="col-6 mt-3">
-						<div class="info-label mb-2"><span>Relationship</span></div>
-						<select class="form-select" aria-label="Relationship">
-						<option selected>Select</option>
-						<option value="1">Father</option>
-						<option value="1">Mother</option>
-						<option value="1">Other</option>
-						</select>
-						</div>
-
-						<div class="col-12 mt-3">
-						<label for="er-addr" class="form-label info-label">Address</label>
-						<input type="text" class="form-control" id="er-addr" placeholder="Address" />
-						</div>
-						</div>*@
-
-
 				</div>
 
-
-			
-
-
-
-				   <div class="row">
-            <div class="col-12 d-flex justify-content-center my-3">
-              <a href="#" class="btn btn-secondary">Reset</a>
-              <button   type="submit"  class="btn btn-primary">Save</button>
-              <a href="@Url.Action("IdCard","Registration")" class="btn btn-success">View Patient ID Card</a>
-            </div>
-          </div>
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center my-3">
+						<a href="#" class="btn btn-secondary">Reset</a>
+						<button type="submit" class="btn btn-primary">Save</button>
+						<a href="#" class="btn btn-success">View Patient ID Card</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</form>
 </main>
-
-
 
 
